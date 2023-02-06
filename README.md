@@ -22,6 +22,7 @@ $ pip install git+https://github.com/theGENreel/PyTelegramBotAPI_Users.git
 ```
 ## Quick start
 ```python
+import asyncio
 from telebot.async_telebot import AsyncTeleBot
 from telebot_users.async_users import AsyncTeleBotUsers
 
@@ -29,7 +30,7 @@ async def main():
     bot = AsyncTeleBot(TOKEN)
     bot_users = AsyncTeleBotUsers(bot, ADMIN_CHATID)
     
-    await users.init()
+    await bot_users.init()
     await bot.polling()
     
 asyncio.run(main())
